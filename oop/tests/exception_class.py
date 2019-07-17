@@ -1,3 +1,2 @@
-
 class NameToShortException(BaseException):
     pass

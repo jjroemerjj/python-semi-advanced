@@ -4,17 +4,12 @@ from oop.tests.exception_class import *
 class Arena:
     def __init__(self):
         self.games = []
-        self.standing = []
+        self.standings = []
 
     def add_game(self, game):
         self.games.append(game)
 
-    """
-    1. stwórz listę zawodników
-    2. Stwórz mapę zawodnik -> liczba zwycięstw albo drugą listę
-    3. Posortuj liczbę zawodników względem ich liczby zwycięstw
-    """
-    def standing(self):
+    def scoring(self):
         players = []
         scores = []
 
@@ -62,5 +57,3 @@ class Player:
 
     def description(self):
         return f"My name is {self.name} and my ranking is {self.ranking}."
-
-

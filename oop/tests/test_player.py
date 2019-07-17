@@ -16,4 +16,3 @@ class TestPlayer(unittest.TestCase):
         description = player.description()
 
         self.assertEqual(description, f"My name is {player.name} and my ranking is {player.ranking}.")
-
