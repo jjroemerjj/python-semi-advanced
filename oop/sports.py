@@ -52,8 +52,24 @@ class Player:
     def __init__(self, name, ranking):
         if len(name) < 3:
             raise NameToShortException()
-        self.name = name
+        self._name = name
         self.ranking = ranking
 
     def description(self):
         return f"My name is {self.name} and my ranking is {self.ranking}."
+
+    @property
+    def name(self):
+        return self._name
+
+    def __eq__(self, o: object) -> bool:
+        if not isinstance(o, Player):
+            return False
+        return self.name == o.name
+
+    def __hash__(self) -> int:
+        result = 0
+        for letter in self.name:
+            result += ord(letter)
+            result += 31
+        return result
